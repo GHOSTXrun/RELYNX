@@ -13,7 +13,7 @@ export default function App(){
  const modal=useRef(null),networkBusy=useRef(false)
  const scroll=id=>{setActive(id);setMobileNav(false);document.getElementById(id)?.scrollIntoView({behavior:'smooth',block:'start'})}
  async function refreshNetwork(){if(networkBusy.current)return;networkBusy.current=true;setNetworkState('Connecting…');try{setNetwork(await readNetwork());setNetworkState('Connected')}catch{setNetworkState('Unavailable')}finally{networkBusy.current=false}}
- useEffect(()=>{refreshNetwork();const timer=setInterval(()=>{if(!document.hidden)refreshNetwork()},60000);return()=>clearInterval(timer)},[])
+ useEffect(()=>{refreshNetwork();const timer=setInterval(()=>{if(!document.hidden){refreshNetwork();setRevision(value=>value+1)}},60000);return()=>clearInterval(timer)},[])
  useEffect(()=>{try{const saved=JSON.parse(localStorage.getItem('relynx-sol-draft'));if(saved?.network==='solana-mainnet-beta'&&typeof saved.name==='string'&&typeof saved.symbol==='string')setDraft(saved)}catch{}},[])
  useEffect(()=>{setWalletData(null)},[session?.account])
  useEffect(()=>{if(!session){setWalletState('Not connected');return}let current=true;setWalletState('Loading…');readWallet(session.account).then(value=>{if(current){setWalletData(value);setWalletState(value.tokensComplete&&value.transactionsComplete&&value.balance!=null?'Updated':'Partial data')}}).catch(()=>{if(current)setWalletState('Unavailable')});return()=>{current=false}},[session?.account,revision])

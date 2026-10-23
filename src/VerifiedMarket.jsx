@@ -12,10 +12,10 @@ export default function VerifiedMarket({session,data,status,onConnect,onRefresh}
    {!tokens.length&&<div className="sol-empty"><b>{!session?'Your assets, in one view':status==='Loading…'?'Reading your wallet…':!data?'Wallet data unavailable':!data.tokensComplete?'Token data is incomplete':query?'No matching mint':'No token balances'}</b><p>{!session?'Connect a Solana wallet to load SOL and SPL balances.':!data||!data.tokensComplete?'Retry when the network is available.':'Only accounts with a positive token balance are listed.'}</p>{!session&&<button className="subtle-button" onClick={onConnect}>Connect wallet ↗</button>}</div>}
    <div className="registry-foot"><span>{data?.tokensComplete?'SPL Token + Token-2022':session?'Token coverage not confirmed':'Wallet not connected'}</span><span role="status">{status}</span></div>
   </section>
-  <section className="frame sol-transactions"><div className="frame-title"><span>Recent transactions</span><b>Latest 5</b></div>
+  <section className="frame sol-transactions"><div className="frame-title"><span>Recent transactions</span><b>Latest 20</b></div>
    {(data?.transactions||[]).map(tx=><a className="sol-tx" key={tx.signature} href={EXPLORER_URL+'/tx/'+tx.signature} target="_blank" rel="noreferrer"><span><b>{short(tx.signature,8)} ↗</b><small>{tx.blockTime?new Date(tx.blockTime*1000).toLocaleString():'Time unavailable'}</small></span><em className={tx.err?'tx-failed':'tx-confirmed'}>{tx.err?'Failed':tx.confirmationStatus||'Recorded'}</em></a>)}
    {!data?.transactions?.length&&<div className="sol-empty"><b>{!session?'Follow wallet activity':status==='Loading…'?'Loading transactions…':data?.transactionsComplete?'No recent transactions':'Activity unavailable'}</b><p>{!session?'Connect a wallet to inspect recent signatures on Solana Explorer.':data?.transactionsComplete?'This address has no recent transaction records.':'Refresh to retry the transaction feed.'}</p></div>}
-   <p className="panel-note">Balances and signatures are read from Solana. Token prices are not estimated.</p>
+   <p className="panel-note">Balances and signatures are read from Solana. Valuations are shown separately in Portfolio allocation.</p>
   </section>
  </div>
 }
