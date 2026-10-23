@@ -34,7 +34,7 @@ const ev=async expression=>{const r=await call('Runtime.evaluate',{expression,re
 const wait=ms=>new Promise(r=>setTimeout(r,ms)),ok=(v,msg)=>{if(!v)throw Error(msg);console.log('PASS',msg);};
 async function until(expression,msg,timeout=18000){const start=Date.now();while(Date.now()-start<timeout){if(await ev(expression)){console.log('PASS',msg);return;}await wait(200);}throw Error(msg+' timed out');}
 await call('Runtime.enable');await call('Network.enable');await call('Network.setCacheDisabled',{cacheDisabled:true});await call('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'no-preference'}]});
-await call('Fetch.enable',{patterns:['*://api.exchange.coinbase.com/*','*://api.kraken.com/*','*://solana-rpc.publicnode.com/*','*://api.mainnet.solana.com/*','*://api.mainnet-beta.solana.com/*','*://api.dexscreener.com/*'].map(urlPattern=>({urlPattern,requestStage:'Request'}))});
+await call('Fetch.enable',{patterns:['*://api.exchange.coinbase.com/*','*://api.kraken.com/*','*://solana-rpc.publicnode.com/*','*://api.mainnet.solana.com/*','*://api.mainnet-beta.solana.com/*','*://api.dexscreener.com/*','*://api.coingecko.com/*'].map(urlPattern=>({urlPattern,requestStage:'Request'}))});
 for(const width of [1440,1024,390,320]){
  await call('Emulation.setDeviceMetricsOverride',{width,height:1100,deviceScaleFactor:1,mobile:width<600});await call('Page.navigate',{url});
  await until('document.querySelector("relynx-model")?.dataset.render==="webgl"','physical 3D renderer at '+width);
