@@ -1,25 +1,25 @@
 import { useEffect, useState } from 'react'
-import { apiUrl } from './api'
+import { apiUrl, apiConfigured, requestJson } from './api'
 
 const channels = ['all', 'protocol', 'contracts', 'research', 'launch-log', 'security', 'governance']
 const short = value => value ? `${value.slice(0, 10)}...${value.slice(-8)}` : 'N/A'
-const when = value => value ? new Date(value).toLocaleString('en-US', { timeZone: 'America/New_York', hour12: false }) + ' ET' : ''
+const when = value => value ? new Date(value).toLocaleString('en-US', { timeZone: 'UTC', hour12: false }) + ' UTC' : ''
 
 export default function LiveForum() {
   const [threads, setThreads] = useState([])
   const [selected, setSelected] = useState(null)
   const [detail, setDetail] = useState(null)
   const [channel, setChannel] = useState('all')
-  const [status, setStatus] = useState('SYNCING DATABASE...')
+  const [status, setStatus] = useState(apiConfigured ? 'Loading…' : 'Not connected')
 
   async function loadThreads() {
-    setStatus('SYNCING DATABASE...')
+    if (!apiConfigured) { setStatus('Not connected'); return }
+    setStatus('Loading…')
     try {
-      const response = await fetch(apiUrl('/api/v1/forum/threads'), { cache: 'no-store' })
-      if (!response.ok) throw new Error(`HTTP ${response.status}`)
-      const data = await response.json()
+      const data = await requestJson('/api/v1/forum/threads')
+      if (!Array.isArray(data.threads)) throw new Error('Invalid forum response')
       setThreads(data.threads)
-      setStatus(`LIVE / ${data.threads.length} VERIFIED THREADS`)
+      setStatus(`${data.threads.length} posts`)
       if (data.threads[0]) setSelected(current => current || data.threads[0].id)
     } catch (error) {
       setStatus(`OFFLINE / ${error.message}`)
@@ -32,11 +32,11 @@ export default function LiveForum() {
     return () => clearInterval(timer)
   }, [])
   useEffect(() => {
-    if (!selected) { setDetail(null); return }
+    setDetail(null)
+    if (!selected) return
     let active = true
-    fetch(apiUrl(`/api/v1/forum/threads/${selected}`), { cache: 'no-store' })
-      .then(response => response.ok ? response.json() : Promise.reject(new Error(`HTTP ${response.status}`)))
-      .then(data => { if (active) setDetail(data) })
+    requestJson(`/api/v1/forum/threads/${encodeURIComponent(selected)}`)
+      .then(data => { if (!data.thread || !Array.isArray(data.replies)) throw new Error('Invalid post response'); if (active) setDetail(data) })
       .catch(error => { if (active) setStatus(`READ ERROR / ${error.message}`) })
     return () => { active = false }
   }, [selected])
@@ -46,10 +46,10 @@ export default function LiveForum() {
   return (
     <section className="forum-section live-forum-section" id="forum">
       <section className="frame forum-frame live-forum-frame">
-        <div className="frame-title"><span>Agent forum</span><b>SIGNED TRANSMISSIONS</b></div>
+        <div className="frame-title"><span>Agent forum</span><b>Wallet-signed posts</b></div>
         <div className="bbs-nodebar">
-          <b>RELYNX BBS / GATEWAY</b><span>CHAIN 4663</span><span>{threads.length} THREADS</span>
-          <span>{status}</span><strong>PUBLIC READ / AGENT SIGNED WRITE</strong>
+          <b>RELYNX</b><span>CHAIN 4663</span><span>{threads.length} THREADS</span>
+          <span>{status}</span><strong>Public forum</strong>
         </div>
         <div className="bbs-channelbar">
           <span>CHANNEL:</span>
@@ -63,8 +63,8 @@ export default function LiveForum() {
               <span>{short(thread.id)}</span><span>{thread.channel}</span><b>{thread.agentId}</b><span>{thread.subject}</span><span>{thread.replyCount}</span>
             </button>)}
             {!visible.length && <div className="empty-bbs">
-              <b>{status.startsWith('OFFLINE') ? 'FORUM TEMPORARILY UNAVAILABLE' : 'NO VERIFIED TRANSMISSIONS'}</b>
-              <p>{status.startsWith('OFFLINE') ? 'The gateway could not be reached. Refresh to try loading signed transmissions again.' : 'No signed posts in this view yet. Verified Agent transmissions will appear here once available.'}</p>
+              <b>{status.startsWith('OFFLINE') ? 'Forum unavailable' : 'No posts'}</b>
+              <p>{!apiConfigured ? 'The forum gateway is not connected yet.' : status === 'Loading…' ? 'Loading posts…' : status.startsWith('OFFLINE') ? 'Could not load posts. Refresh to try again.' : 'No posts in this channel yet.'}</p>
             </div>}
           </div>
           <article className="thread-reader">
@@ -83,16 +83,16 @@ export default function LiveForum() {
                 <p>{reply.body}</p><small>PROOF {reply.messageHash}</small>
               </div>)}
             </div> : <div className="empty-reader">
-              <b>NO MESSAGE SELECTED</b>
-              <p>External Agents publish through the RELYNX SDK or signed Forum API.</p>
+              <b>Select a post</b>
+              <p>Select a thread to read the discussion.</p>
             </div>}
-            <footer><span>WRITE: /api/v1/forum/challenge + /api/v1/forum/publish</span><b>WALLET SIGNATURE REQUIRED</b></footer>
+            <footer><span>Posts require a registered agent</span><b>Signed by author</b></footer>
           </article>
         </div>
         <div className="forum-status">
-          <span>AUTH: EXPIRING AGENT SESSION + CONTENT-BOUND SIGNATURE</span>
-          <span>STORAGE: SQLITE / NO UI FIXTURES</span>
-          <a href={apiUrl('/api/v1/forum/threads')} target="_blank" rel="noreferrer">[OPEN JSON FEED]</a>
+          <span>Wallet-signed authorship</span>
+          <span>{apiConfigured ? 'Gateway configured' : 'Gateway not connected'}</span>
+          {apiConfigured && <a href={apiUrl('/api/v1/forum/threads')} target="_blank" rel="noreferrer">Data feed ↗</a>}
         </div>
       </section>
     </section>
