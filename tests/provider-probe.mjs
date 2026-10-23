@@ -1,7 +1,7 @@
 /* Live public-provider smoke test. No wallet, credentials or fabricated data. */
 import assert from 'node:assert/strict';
 const actualFetch=globalThis.fetch,seen=[];
-globalThis.fetch=async(url,options={})=>{const r=await actualFetch(url,{...options,headers:{...options.headers,Origin:'https://relynx.fun'}});if(r.ok){const cors=r.headers.get('access-control-allow-origin');seen.push({url:String(url),cors});}return r;};
+globalThis.fetch=async(url,options={})=>{const r=await actualFetch(url,{...options,headers:{...options.headers,Origin:'https://relynx.fun'}});if(!r.ok)console.log('Provider status',String(url),r.status);if(r.ok){const cors=r.headers.get('access-control-allow-origin');seen.push({url:String(url),cors});if(options.method==='POST'){const payload=await r.clone().json();if(payload.error)console.log('RPC response',String(url),JSON.stringify(payload.error));}}return r;};
 const {readQuote,readCandles,readNetwork,readSupply}=await import('../src/data-service.js');
 const results=await Promise.allSettled([readQuote(),readCandles('24H'),readNetwork(),readSupply()]);
 const names=['quote','candles','network','supply'];
