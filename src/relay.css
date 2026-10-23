@@ -1,0 +1,28 @@
+.app-title>span:first-child{background:#000080 url('/relay-logo.svg') center/contain no-repeat}
+.relay-hero{background:#000080;color:#aaa;border-bottom:1px solid #fff;scroll-margin-top:16px}
+.relay-hero-top,.relay-hero-bottom{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:7px 13px;font-size:9px;border-bottom:1px solid #00aaa9;color:#00ffff}
+.relay-hero-body{display:flex;align-items:center;gap:18px;padding:24px 20px}
+.relay-hero-body>img{width:74px;height:74px;border:1px solid #00aaa9;image-rendering:pixelated;flex-shrink:0}
+.relay-hero-body>div{min-width:0}.relay-hero-body p{overflow-wrap:anywhere}.verified-registry .frame-title>b{position:static}.relay-hero{flex-shrink:0}
+.relay-eyebrow{color:#ffff55;font-size:10px;letter-spacing:2px}
+.relay-hero h1{font:700 clamp(19px,2.5vw,34px)/1.2 'Courier New',monospace;color:#fff;margin:8px 0;letter-spacing:-1px}
+.relay-hero h1 span{color:#00ffff;animation:relay-cursor 1.3s steps(2,start) infinite}
+.relay-hero p{font-size:11px;line-height:1.7;margin:0;color:#b8d6ed}
+.relay-hero-actions{margin-left:auto;display:flex;flex-direction:column;gap:10px;min-width:220px}
+.relay-hero-actions button{border:1px solid #00ffff;background:#00aaa9;color:#000080;padding:10px;font:700 11px 'Courier New',monospace;cursor:pointer}
+.relay-hero-actions button+button{background:transparent;color:#00ffff}
+.relay-hero-actions small{font-size:8px;color:#aaa;text-align:center}
+.relay-hero-bottom{border-top:1px dotted #00aaa9;border-bottom:0;font-size:9px;padding:8px 13px}.relay-hero-bottom b{color:#ffff55}
+.relay-profile-logo{width:48px;height:48px;border:1px solid #00ffff;margin-right:10px}
+.verified-registry .frame-title{display:flex;justify-content:space-between;gap:6px;padding:0 5px}.verified-registry .frame-title>span{white-space:nowrap;font-size:9px}.verified-registry .frame-title>b{font-size:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.verified-inspect dl dd{min-width:0;overflow-wrap:anywhere}.verified-inspect .project-title{min-width:0}
+.pid0-profile .project-title:after{display:none}
+.relay-manifest{margin:10px 4px;border:1px solid #00aaa9;padding:12px;background:#000068}.relay-manifest>span{color:#00ffff;font-size:8px;letter-spacing:1px}.relay-manifest h3{font-size:19px;line-height:1.3;color:#fff;margin:9px 0}.relay-manifest p{font-size:10px;line-height:1.6;margin:0;color:#aaa}
+.relay-roadmap{margin:15px 4px;border:1px solid #00aaa9;padding:10px;font-size:9px}.relay-roadmap>b{color:#ffff55}.relay-roadmap>span{display:flex;gap:8px;align-items:center;padding-top:10px;color:#fff}.relay-roadmap i{font-style:normal;color:#00ffff}.relay-roadmap em{margin-left:auto;font-size:8px;font-style:normal;color:#00ffff}
+.verified-inspect .official-pid0-logo{background:#000080;color:#00ffff}.verified-inspect .official-pid0-logo:before{content:'P0';font-size:21px}
+button:focus-visible,a:focus-visible{outline:2px solid #ffff55;outline-offset:2px}
+.mono .relay-hero,.mono .relay-manifest{background:#001105}.mono .relay-hero h1,.mono .relay-manifest h3{color:#b8ffc8}.mono .relay-hero p,.mono .relay-hero-top,.mono .relay-hero-bottom{color:#52ff79}.mono .relay-hero-actions button{background:#38d75f;color:#001105}.mono .relay-hero-actions button+button{background:transparent;color:#52ff79}
+@keyframes relay-cursor{to{opacity:0}}
+@media(prefers-reduced-motion:reduce){.relay-hero h1 span{animation:none}}
+@media(max-width:700px){.machine{max-width:100vw;overflow:hidden}.menu-bar{flex-wrap:wrap;height:auto;min-height:28px}.location{gap:8px}.location>span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.bios-line>b{display:none}.relay-hero-body>div:not(.relay-hero-actions){width:calc(100% - 65px)}.relay-hero-body p{font-size:10px}.relay-hero h1{overflow-wrap:anywhere}.frame-title>b{max-width:45%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
+@media(max-width:1000px){.relay-hero-body{gap:12px;padding:18px 12px}.relay-hero-body>img{width:50px;height:50px}.relay-hero-actions{min-width:190px}.relay-hero h1{font-size:24px}}
+@media(max-width:700px){.relay-hero-body{flex-wrap:wrap}.relay-hero-body>div:not(.relay-hero-actions){flex:1}.relay-hero-actions{margin-left:0;width:100%}.relay-hero h1{font-size:22px}.relay-hero-top span:last-child{display:none}.relay-hero-bottom{justify-content:flex-start}.relay-hero-bottom span{font-size:8px}}
