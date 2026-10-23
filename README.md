@@ -1,33 +1,45 @@
 # RELYNX
 
-Onchain workspace for Robinhood Chain and PONS V2. Includes wallet access, a launch registry, protocol details and an agent forum.
+A compact Solana workspace for SOL balances, SPL assets, recent transactions and local token drafts.
 
-## Development
+## Run
 
-Node.js 24 or later is required.
+Requires Node.js 24 or later.
 
 ```sh
 npm ci
 npm run dev
 ```
 
-Vite opens `index.source.html`, the editable React entry. The root `index.html` and `assets/` contain the published GitHub Pages build.
+The editable HTML entry is `index.source.html`. The root `index.html` and `assets/` are the published GitHub Pages build.
 
-## Publish
+## Build and publish
 
 ```sh
 npm run build
+npm run test:data
 ```
 
-The build creates `dist/` and updates the root HTML and static assets. Commit the source changes together with the generated files. GitHub Pages serves the main branch root. The custom domain is `relynx.fun`.
+The build updates `dist/` and the root static files. Commit source and generated files together. GitHub Pages serves the main branch root at `relynx.fun`.
 
-## Data connections
+## Solana integration
 
-- Network state, fees, launch events and curve reserves are read directly from the configured Robinhood RPC.
-- The recent registry scans the latest 10,000 blocks and displays up to 12 launches. It is not a complete historical index.
-- Archived PID0 and test entries are marked as historical. Factory receipts are checked separately when selected.
-- A curve reserve is not token price or total liquidity. Unsupported price and holder-count estimates are not displayed.
-- Agent accounts and forum records require a gateway. Copy `.env.example` to `.env`, set `VITE_PID0_API_ORIGIN`, then rebuild. The gateway must allow the frontend domain through CORS.
-- The Supabase source includes RELYNX origins; deploying that function requires access to the Supabase project. A frontend build does not deploy the backend.
+- Phantom and Solflare public-address connections, including account-change and disconnect events.
+- SOL balance, SPL Token and Token-2022 accounts, and the latest five transaction signatures.
+- Network slot, epoch and sampled transactions per second. Unavailable values remain unavailable.
+- Exact string-based SPL token amount formatting and grouping across token accounts.
+- No old EVM contract calls are used by the frontend.
 
-Local gateway: `npm start` after building. Runtime state lives under `.pid0/`. Keep session secrets and private keys in the hosting environment, never in this repository.
+Set `VITE_SOLANA_RPC_URL` in a local `.env` file to use a browser-accessible Solana mainnet RPC endpoint, then rebuild. Public RPC endpoints can rate limit requests. Do not put server credentials in a browser environment variable.
+
+## Drafts and workflow
+
+Token details are saved in local browser storage. Saving a draft does not create a mint, spend SOL or submit a transaction. Onchain launch support requires a selected Solana program and transaction builder.
+
+The four-step workflow is an interactive illustration, separate from live balances. The two editable introduction graphics are `public/solana-workspace.svg` and `public/solana-flow.svg`.
+
+## Verification
+
+Data tests cover precise balances, duplicate account aggregation, partial RPC failures and zero TPS samples. Browser checks cover six widths, wallet connection with test responses, draft storage, keyboard dismissal and workflow selection. Real wallet transactions were not submitted.
+
+References: [Solana token account RPC](https://solana.com/docs/rpc/http/gettokenaccountsbyowner), [SOL balance RPC](https://solana.com/docs/rpc/http/getbalance), [Phantom connections](https://docs.phantom.com/solana/establishing-a-connection).
