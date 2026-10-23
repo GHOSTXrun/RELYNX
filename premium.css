@@ -1,0 +1,126 @@
+/* RELYNX visual system — shared by source and GitHub Pages. */
+.sol-workspace{--accent:#8cf2cd;--border:#283039;--muted:#91a0aa;--panel:#14191f;--display:'DM Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:radial-gradient(ellipse at 85% 0%,#20203755,transparent 45%),#0d1014;color:#e8edef;min-height:100vh}
+.sol-workspace .sidebar{width:224px;padding:30px 16px 20px;background:#101318;border-right:1px solid #252a32}
+.sol-workspace .brand{font-size:24px;letter-spacing:-1px;gap:12px;padding-left:8px}
+.sol-workspace .brand small{font-size:8px;letter-spacing:1.8px;color:#7e8a96;margin-top:8px}
+.sol-workspace .relynx-brand-logo{width:38px;height:38px;border-radius:11px;box-shadow:0 0 0 1px #ffffff15,0 5px 16px #0005}
+.sol-workspace .workspace-switch{margin:32px 0 28px;padding:13px 10px;background:linear-gradient(120deg,#1c2428,#171b23);border:1px solid #303a40;border-radius:12px;gap:11px}
+.sol-workspace .workspace-avatar,.sol-workspace .sol-mark,.sol-workspace .sol-currency{font-size:0;position:relative;flex-shrink:0}
+.sol-workspace .workspace-avatar{width:34px;height:34px;background:#141a21;border:1px solid #36434b;border-radius:10px}
+.sol-workspace .workspace-avatar:after,.sol-workspace .sol-mark:after,.sol-workspace .sol-currency:after{content:'';display:block;width:22px;height:22px;background:linear-gradient(150deg,#a18aff 10%,#8cf2cd 90%);clip-path:polygon(20% 12%,100% 12%,80% 30%,0 30%,20% 12%,0 41%,80% 41%,100% 59%,20% 59%,0 41%,20% 70%,100% 70%,80% 88%,0 88%,20% 70%)}
+.sol-workspace .workspace-avatar:after{position:absolute;inset:5px}
+.sol-workspace .sol-currency{width:22px;height:22px}
+.sol-workspace .nav-label{font-size:9px;color:#697580;letter-spacing:1.7px;padding-left:12px}
+.sol-workspace .sidebar nav{gap:7px}
+.sol-workspace .sidebar nav button{padding:12px;font-size:12px;border-radius:10px;min-height:46px;gap:12px;color:#929da8;border:1px solid transparent}
+.sol-workspace .sidebar nav button svg{width:19px;height:19px;stroke-width:1.65}
+.sol-workspace .sidebar nav button.active{background:linear-gradient(100deg,#8cf2cd17,#8cf2cd05);border-color:#8cf2cd28;color:#b4ffe4;box-shadow:inset 3px 0 #8cf2cd}
+.sol-workspace .sidebar nav button:hover{background-color:#222a32;color:#e6f5f1}
+.sol-workspace .nav-active-dot{background:#8cf2cd;box-shadow:0 0 10px #8cf2cd66}
+.sol-workspace .network-card{border:1px solid #2b333c;background:#171c23;border-radius:12px;padding:14px 12px}
+.sol-workspace .sidebar-legal{color:#687581;padding:0 3px;margin-top:20px}
+.sol-workspace .app-content{margin-left:224px}
+.sol-workspace .topbar{height:70px;padding:0 36px;background:#0e1116dd;backdrop-filter:blur(18px);border-bottom:1px solid #ffffff0b}
+.sol-workspace .breadcrumbs{font-size:12px;color:#7c8794;gap:12px}
+.sol-workspace .breadcrumbs b{color:#dce6ea;font-weight:500}
+.sol-workspace .wallet-button{background:#1a2525;border:1px solid #8cf2cd35;color:#c5f7e6;border-radius:9px;padding:11px 15px;font-size:12px;gap:9px}
+.sol-workspace .wallet-button:hover{background:#273e35;border-color:#8cf2cd80}
+.sol-workspace .sol-network-status{font-size:10px;padding:7px 10px;border:1px solid #2c343d;border-radius:20px;background:#171b22}
+.sol-workspace .sol-network-status.online{color:#a1e5cb;border-color:#8cf2cd25}
+.sol-workspace .page-content{max-width:1510px;padding:32px 36px 0}
+.sol-workspace .page-heading{margin-bottom:22px}
+.sol-workspace .eyebrow{font-size:9px;letter-spacing:1.8px;color:#829199}
+.sol-workspace .page-heading h1{font-size:28px;letter-spacing:-1px;font-weight:550;margin-top:9px}
+.sol-workspace .page-heading h1>span{color:var(--accent)}
+.sol-workspace .sol-refresh{width:38px;height:38px;border-radius:10px;background:#181e25;border-color:#303842;color:#aebdc5}
+.sol-workspace .hero-card{position:relative;isolation:isolate;overflow:hidden;border:1px solid #384249;border-radius:20px;padding:34px;gap:24px;grid-template-columns:minmax(230px,.85fr) minmax(300px,1.15fr);background:radial-gradient(ellipse at 85% 50%,#8d7bde14,transparent 55%),linear-gradient(115deg,#1c2828,#161b22 60%,#1d1c2c);box-shadow:0 18px 60px #0002,inset 0 1px #ffffff07}
+.sol-workspace .hero-card:before{content:'';position:absolute;inset:0;z-index:-1;background-image:radial-gradient(#b5d0ce25 .7px,transparent .7px);background-size:20px 20px;mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.sol-workspace .hero-label{font-size:9px;letter-spacing:1.8px;color:#b0c9c1}
+.sol-workspace .hero-label>span{background:#8cf2cd;box-shadow:0 0 12px #8cf2cd66}
+.sol-workspace .hero-copy h2{font-size:clamp(34px,3.6vw,52px);letter-spacing:-2px;line-height:1.12;margin:20px 0 16px;font-weight:550}
+.sol-workspace .hero-copy h2 em{font-style:normal;background:linear-gradient(100deg,#a1f7d9,#b8a4fa);background-clip:text;-webkit-text-fill-color:transparent}
+.sol-workspace .hero-copy p{font-size:13px;line-height:1.85;color:#a0afb7}
+.sol-workspace .hero-actions{margin-top:25px;gap:20px}
+.sol-workspace .primary-button{background:#a3f4d7;border:1px solid #b6ffe5;color:#102a23;border-radius:9px;padding:12px 16px;font-size:12px;font-weight:600;box-shadow:0 4px 20px #8cf2cd14}
+.sol-workspace .primary-button:hover{background:#c1ffe8;transform:translateY(-2px);box-shadow:0 7px 24px #8cf2cd25}
+.sol-workspace .text-button{font-size:11px;color:#b7c5cc}
+.sol-workspace .sol-hero-art img{max-height:290px;filter:drop-shadow(0 18px 24px #0003)}
+.sol-workspace .sol-metrics{gap:10px;border:0;background:none;margin-top:14px;border-radius:0}
+.sol-workspace .sol-metrics>div{position:relative;background:linear-gradient(130deg,#1b2229,#151a21);border:1px solid #2d353e!important;border-radius:12px;padding:17px 16px;min-height:84px}
+.sol-workspace .sol-metrics span{font-size:10px;color:#8b9aa5;margin-bottom:10px}
+.sol-workspace .sol-metrics b{font-size:15px;letter-spacing:-.3px;color:#e0e9ed}
+.sol-workspace .sol-metrics>div:first-child b{color:#a4eacf;font-size:13px}
+.sol-workspace .section-heading{margin:32px 0 15px}
+.sol-workspace .section-heading h2{font-size:21px;letter-spacing:-.5px;font-weight:550}
+.sol-workspace .section-heading p{font-size:12px;line-height:1.6;color:#8999a5}
+.sol-workspace .subtle-button{background:#1d252d;border:1px solid #35404a;border-radius:8px;font-size:11px;padding:10px 13px;color:#cad9df}
+.sol-workspace .subtle-button:hover{background:#293a3c;border-color:#8cf2cd55;color:#c7ffe9}
+.sol-workspace .frame{border:1px solid #2c353f;border-radius:14px;background:#151a21;box-shadow:0 6px 24px #0000000c;overflow:hidden}
+.sol-workspace .frame-title{padding:16px 18px;min-height:50px;font-size:12px;color:#dae7eb;border-bottom:1px solid var(--border);background:#192027}
+.sol-workspace .frame-title>b{font-size:9px;color:#93a4ad}
+.sol-workspace .sol-data-grid{gap:16px}
+.sol-workspace .sol-asset-tools{padding:13px 16px;gap:12px}
+.sol-workspace .sol-asset-tools input{border:1px solid #303b45;background:#10161c;border-radius:8px;padding:10px 12px;font-size:12px;color:#d1dee4}
+.sol-workspace input::placeholder{color:#6d7e8c}
+.sol-workspace .sol-native{padding:18px 16px;background:linear-gradient(90deg,#8cf2cd08,transparent)}
+.sol-workspace .sol-mark{width:40px;height:40px;border:1px solid #8cf2cd25;background:#1a2b29;border-radius:12px;display:grid;place-items:center}
+.sol-workspace .sol-mark:after{width:24px;height:24px}
+.sol-workspace .sol-native b{font-size:13px}
+.sol-workspace .sol-native strong{font-size:16px}
+.sol-workspace .sol-token-head{background:#11171d;letter-spacing:.6px;text-transform:uppercase;padding:12px 16px}
+.sol-workspace .sol-token-row{padding:15px 16px}
+.sol-workspace .sol-token-row:hover,.sol-workspace .sol-tx:hover{background:#8cf2cd09}
+.sol-workspace .sol-empty{padding:32px 20px}
+.sol-workspace .sol-empty>b{font-size:14px;color:#d0dfe4}
+.sol-workspace .sol-empty>p{font-size:12px;line-height:1.8;color:#8799a5;margin:10px auto 16px}
+.sol-workspace .sol-transactions .sol-empty:before{content:'';display:block;width:42px;height:42px;margin:0 auto 18px;border:1px solid #aa98e440;border-radius:13px;background:linear-gradient(135deg,#aa98e420,#aa98e405) center/100%}
+.sol-workspace .sol-transactions .sol-empty{position:relative}
+.sol-workspace .sol-transactions .sol-empty:after{content:'↗';position:absolute;top:40px;left:calc(50% - 11px);width:22px;color:#baa8f1;font-size:23px;line-height:24px}
+.sol-workspace .panel-note{font-size:11px!important;color:#8498a5!important;line-height:1.8!important}
+.sol-workspace .registry-foot{font-size:9px;padding:13px 16px;background:#11171c}
+.sol-workspace .sol-intro-grid{gap:16px}
+.sol-workspace .sol-intro-copy{padding:25px;background:linear-gradient(130deg,#1b2529,#151a21)}
+.sol-workspace .sol-intro-copy h3{font-size:27px;margin:12px 0;letter-spacing:-.8px}
+.sol-workspace .sol-intro-copy>p{font-size:12px;line-height:1.85}
+.sol-workspace .sol-feature-list{gap:15px;margin-top:23px}
+.sol-workspace .sol-feature-list span{align-items:center;line-height:1.6;font-size:11px}
+.sol-workspace .sol-feature-list b{display:grid;place-items:center;flex-shrink:0;width:26px;height:26px;background:#8cf2cd0b;border:1px solid #8cf2cd25;border-radius:7px;color:#a1e9ce}
+.sol-workspace .sol-flow-figure{padding:15px;background:#141a22}
+.sol-workspace .sol-flow-figure figcaption{padding:12px 12px 3px;font-size:10px;color:#8698a6}
+.sol-workspace .outline-tag{padding:6px 9px;border:1px solid #a994ed40;border-radius:6px;color:#b4a5da;background:#a994ed08;font-size:8px}
+.sol-workspace .workflow-table thead th{background:#11171d;color:#7f929e;padding:14px 16px}
+.sol-workspace .workflow-table td{padding:16px;font-size:11px}
+.sol-workspace .workflow-table th button{padding:16px;min-height:60px;gap:12px}
+.sol-workspace .workflow-table th button>span{display:grid;place-items:center;width:25px;height:25px;border:1px solid #35434d;border-radius:7px}
+.sol-workspace .workflow-table .is-active{background:linear-gradient(90deg,#8cf2cd14,#8cf2cd03)}
+.sol-workspace .workflow-table .is-active th button>span{background:#8cf2cd15;border-color:#8cf2cd44}
+.sol-workspace .workflow-demo{background:#1b232b;padding:22px;gap:20px}
+.sol-workspace .workflow-demo span{color:#a5e6cd;font-size:9px}
+.sol-workspace .workflow-demo h3{font-size:20px;margin:10px 0}
+.sol-workspace .workflow-demo p{font-size:12px;line-height:1.8}
+.sol-workspace .info-row{gap:16px}
+.sol-workspace .info-scroll{padding:18px}
+.sol-workspace .live-protocol-grid{background:#11171d;border-color:#2c3841;border-radius:9px;font-size:11px;padding:5px 14px}
+.sol-workspace .live-protocol-grid>*{padding:12px 0;border-color:#27313a}
+.sol-workspace .info-actions{flex-direction:row;flex-wrap:wrap;gap:8px}
+.sol-workspace .info-actions button{background:#202d31;border-color:#36504d;border-radius:8px;font-size:11px;min-height:40px;padding:10px 13px}
+.sol-workspace .compact-rules summary{font-size:12px;color:#c6d5dd;line-height:1.8;min-height:30px}
+.sol-workspace .compact-rules p{font-size:11px;line-height:1.85}
+.sol-workspace .page-footer{border-color:#29313a;padding:26px 0;margin-top:36px}
+.sol-workspace .page-footer>span{letter-spacing:1px;font-size:12px}
+.sol-workspace .page-footer small{color:#718591;font-size:10px;letter-spacing:0}
+.sol-workspace .sol-dialog{background:linear-gradient(135deg,#202a30,#141920);border:1px solid #43534f;border-radius:18px;padding:28px!important;box-shadow:0 30px 100px #0008}
+.sol-workspace .wallet-choices button{background:#202a33;border-color:#394650;border-radius:11px;padding:18px;font-size:13px}
+.sol-workspace .wallet-choices button:hover{background:#293b3a;border-color:#8cf2cd66}
+.sol-workspace .sol-form input,.sol-workspace .sol-form select{border-radius:8px;background:#10171c;border-color:#35454e;padding:12px}
+.sol-workspace .draft-summary{border-color:#34434b;background:#141d23;border-radius:10px;padding:16px;gap:13px}
+@media(min-width:1600px){.sol-workspace .page-content{padding-top:40px}.sol-workspace .hero-card{padding:44px}.sol-workspace .hero-copy h2{font-size:56px}}
+@media(max-width:1200px){.sol-workspace .sidebar{width:200px;padding:25px 12px}.sol-workspace .app-content{margin-left:200px}.sol-workspace .topbar{padding:0 24px}.sol-workspace .page-content{padding:26px 24px 0}.sol-workspace .hero-card{padding:26px;gap:14px}.sol-workspace .hero-copy h2{font-size:38px}.sol-workspace .hero-actions{gap:12px}.sol-workspace .hero-actions button{font-size:10px}.sol-workspace .sol-metrics>div{padding:15px 12px}.sol-workspace .sol-metrics b{font-size:13px}}
+@media(max-width:960px){.sol-workspace .hero-card{grid-template-columns:1fr 1fr;padding:24px}.sol-workspace .hero-copy h2{font-size:34px}.sol-workspace .hero-copy p{font-size:12px}.sol-workspace .hero-actions{gap:8px}.sol-workspace .sol-metrics{gap:8px}.sol-workspace .sol-metrics>div{padding:13px 10px}.sol-workspace .sol-metrics b{font-size:12px}.sol-workspace .sol-metrics>div:first-child b{font-size:11px}.sol-workspace .sol-intro-copy{padding:20px}.sol-workspace .sol-intro-copy h3{font-size:24px}}
+@media(max-width:760px){.sol-workspace .sidebar{width:240px;padding:28px 16px}.sol-workspace .app-content{margin-left:0}.sol-workspace .topbar{height:62px;padding:0 18px}.sol-workspace .page-content{padding:24px 18px 0}.sol-workspace .page-heading h1{font-size:25px}.sol-workspace .hero-card{padding:25px}.sol-workspace .hero-copy h2{font-size:36px}.sol-workspace .hero-actions{flex-direction:column;align-items:flex-start;gap:6px}.sol-workspace .sol-data-grid{gap:12px}.sol-workspace .section-heading{margin-top:28px}.sol-workspace .sol-metrics>div{min-height:80px}}
+@media(max-width:560px){.sol-workspace .page-content{padding:22px 14px 0}.sol-workspace .topbar{padding:0 14px}.sol-workspace .wallet-button{font-size:11px;padding:10px 12px}.sol-workspace .page-heading{margin-bottom:18px}.sol-workspace .page-heading h1{font-size:24px}.sol-workspace .hero-card{grid-template-columns:1fr;padding:26px 22px 16px;gap:22px;border-radius:16px}.sol-workspace .hero-copy h2{font-size:39px;letter-spacing:-1.6px;max-width:340px;margin:18px 0 14px}.sol-workspace .hero-copy h2 br{display:block}.sol-workspace .hero-copy h2 em:before{content:none}.sol-workspace .hero-copy p{font-size:12px}.sol-workspace .hero-actions{flex-direction:row;align-items:center;gap:17px;margin-top:22px}.sol-workspace .hero-actions button{font-size:11px}.sol-workspace .sol-hero-art img{max-height:none}.sol-workspace .sol-metrics{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-top:10px}.sol-workspace .sol-metrics>div{padding:14px;min-height:78px}.sol-workspace .sol-metrics>div:last-child{grid-column:1/-1}.sol-workspace .sol-metrics b,.sol-workspace .sol-metrics>div:first-child b{font-size:14px}.sol-workspace .section-heading{gap:10px;margin:28px 0 13px}.sol-workspace .section-heading h2{font-size:20px}.sol-workspace .section-heading p{font-size:11px}.sol-workspace .subtle-button{font-size:10px;padding:10px}.sol-workspace .sol-data-grid,.sol-workspace .sol-intro-grid{grid-template-columns:1fr;gap:12px}.sol-workspace .sol-asset-tools input{font-size:16px}.sol-workspace .sol-intro-copy{padding:24px}.sol-workspace .sol-flow-figure{padding:12px}.sol-workspace .workflow-table th button{padding:10px 8px;min-height:66px;gap:6px;font-size:10px}.sol-workspace .workflow-table th button>span{width:22px;height:22px}.sol-workspace .workflow-table td{padding:10px 7px;font-size:9px;line-height:1.7}.sol-workspace .workflow-table thead th{padding:12px 7px;font-size:8px}.sol-workspace .workflow-demo{padding:20px}.sol-workspace .workflow-demo-actions{align-self:flex-start;flex-direction:row}.sol-workspace .info-row{gap:12px}.sol-workspace .sol-dialog{padding:22px!important}.sol-workspace .sol-form input,.sol-workspace .sol-form select{font-size:16px}.sol-workspace .page-footer{gap:12px}.sol-workspace .page-footer small{display:block;line-height:1.7;margin-top:6px}}
+
+/* Keep typography independent of external font availability. */
+.sol-workspace{font-family:var(--display)}
+.sol-workspace .app-content,.sol-workspace .page-content,.sol-workspace .hero-copy{min-width:0}
+.sol-workspace .workspace-avatar:after,.sol-workspace .sol-mark:after,.sol-workspace .sol-currency:after{clip-path:none;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M7 5h24l-6 6H1zm-6 8h24l6 6H7zm6 8h24l-6 6H1z'/%3E%3C/svg%3E") center/contain no-repeat}

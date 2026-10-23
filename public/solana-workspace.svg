@@ -1,1 +1,43 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="640" height="280" viewBox="0 0 640 280" role="img" aria-labelledby="title desc"><title id="title">RELYNX on Solana</title><desc id="desc">A wallet connects to RELYNX, which reads SOL, SPL assets and transaction records from Solana.</desc><defs><linearGradient id="accent"><stop stop-color="#00d9e8"/><stop offset="1" stop-color="#a78bfa"/></linearGradient><linearGradient id="panel" x2="0" y2="1"><stop stop-color="#182735"/><stop offset="1" stop-color="#101922"/></linearGradient><pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r=".7" fill="#304353"/></pattern></defs><rect width="640" height="280" rx="12" fill="#0e161e"/><rect x="14" y="14" width="612" height="252" rx="8" fill="url(#grid)" opacity=".6"/><g fill="none" stroke="url(#accent)" stroke-width="1.5"><path d="M160 140H245M395 140H475M475 140V69H510M475 140H510M475 140V211H510"/></g><g fill="#00d9e8"><circle cx="200" cy="140" r="3"/><circle cx="437" cy="140" r="3"/><circle cx="475" cy="140" r="3"/></g><g font-family="Arial,Helvetica,sans-serif"><rect x="30" y="99" width="130" height="82" rx="8" fill="url(#panel)" stroke="#324d60"/><rect x="48" y="117" width="27" height="21" rx="4" fill="none" stroke="#8daaba" stroke-width="1.5"/><path d="M67 123h12v11H67z" fill="#1b3442" stroke="#8daaba"/><circle cx="72" cy="128" r="1.5" fill="#00d9e8"/><text x="48" y="159" fill="#dbeaf2" font-size="13">Your wallet</text><rect x="245" y="77" width="150" height="126" rx="10" fill="#142c38" stroke="url(#accent)"/><path d="M269 105h16l9 9-9 9h-16m0 13h25" fill="none" stroke="#00d9e8" stroke-width="3"/><text x="268" y="158" fill="#edf9ff" font-size="20" font-weight="700">RELYNX</text><text x="268" y="181" fill="#86aaba" font-size="10" letter-spacing="1">SOLANA WORKSPACE</text><g fill="#121e29" stroke="#304859"><rect x="510" y="44" width="106" height="50" rx="6"/><rect x="510" y="115" width="106" height="50" rx="6"/><rect x="510" y="186" width="106" height="50" rx="6"/></g><text x="527" y="65" fill="#00d9e8" font-size="12" font-weight="700">SOL</text><text x="527" y="82" fill="#88a3b3" font-size="10">Native balance</text><text x="527" y="136" fill="#a99af8" font-size="12" font-weight="700">SPL</text><text x="527" y="153" fill="#88a3b3" font-size="10">Token accounts</text><text x="527" y="207" fill="#d4e2ec" font-size="12" font-weight="700">Records</text><text x="527" y="224" fill="#88a3b3" font-size="10">Transactions</text><text x="30" y="34" fill="#728f9f" font-size="9" letter-spacing="1.8">ONE CONNECTION / THREE VIEWS</text><text x="30" y="252" fill="#5e7f91" font-size="9">Your wallet stays in control.</text></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="340" viewBox="0 0 640 340" role="img" aria-labelledby="title desc">
+<title id="title">Your wallet, connected to Solana</title><desc id="desc">A Solana wallet connects to three workspace views: native SOL, SPL assets and transaction records.</desc>
+<defs>
+<linearGradient id="mint" x2="1" y2="1"><stop stop-color="#c1ffe6"/><stop offset="1" stop-color="#75cdb8"/></linearGradient>
+<linearGradient id="purple" x2="1" y2="1"><stop stop-color="#d0bdff"/><stop offset="1" stop-color="#8d7bd5"/></linearGradient>
+<linearGradient id="glass" x2=".7" y2="1"><stop stop-color="#303b46"/><stop offset="1" stop-color="#171e28"/></linearGradient>
+<linearGradient id="edge" x2="1" y2="1"><stop stop-color="#a0f2d4" stop-opacity=".65"/><stop offset=".5" stop-color="#50616e" stop-opacity=".3"/><stop offset="1" stop-color="#b69ff2" stop-opacity=".7"/></linearGradient>
+<radialGradient id="halo"><stop stop-color="#91e9cd" stop-opacity=".14"/><stop offset="1" stop-color="#91e9cd" stop-opacity="0"/></radialGradient>
+<filter id="shadow" x="-.5" y="-.5" width="2" height="2"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#070c13" flood-opacity=".45"/></filter>
+<symbol id="sol" viewBox="0 0 32 32"><path d="M7 5h24l-6 6H1zm-6 8h24l6 6H7zm6 8h24l-6 6H1z" fill="currentColor"/></symbol>
+</defs>
+<ellipse cx="300" cy="170" rx="225" ry="165" fill="url(#halo)"/>
+<g fill="none" stroke="#8099aa" stroke-opacity=".15"><ellipse cx="285" cy="173" rx="170" ry="132" transform="rotate(-22 285 173)"/><ellipse cx="285" cy="173" rx="209" ry="164" transform="rotate(-22 285 173)"/><path d="M30 288h575" stroke-dasharray="2 8"/></g>
+<g fill="none" stroke-width="1.3"><path d="M317 172h53q12 0 12-12V81q0-12 12-12h28" stroke="#b5a0ef" stroke-opacity=".65"/><path d="M317 172h105" stroke="#9bebce" stroke-opacity=".65"/><path d="M317 172h53q12 0 12 12v79q0 12 12 12h28" stroke="#9aabc0" stroke-opacity=".55"/></g>
+<g fill="#9ce8cf"><circle cx="354" cy="172" r="3"/><circle cx="382" cy="222" r="3"/></g><circle cx="382" cy="107" r="3" fill="#c3abff"/>
+<g transform="translate(105 71) rotate(-8 105 100)" filter="url(#shadow)">
+<rect x="7" y="10" width="210" height="211" rx="26" fill="#0f1620" stroke="#333d4a"/>
+<rect width="210" height="211" rx="26" fill="url(#glass)" stroke="url(#edge)" stroke-width="1.5"/>
+<path d="M22 53h166" stroke="#ffffff0e"/>
+<g fill="#8fa49f"><circle cx="24" cy="28" r="3"/><circle cx="35" cy="28" r="3" opacity=".5"/><circle cx="46" cy="28" r="3" opacity=".3"/></g>
+<text x="187" y="31" text-anchor="end" fill="#a8bbb7" font-family="Arial,sans-serif" font-size="8" letter-spacing="1.5">SOL / SPL</text>
+<rect x="24" y="75" width="48" height="48" rx="14" fill="#8cf2cd12" stroke="#8cf2cd40"/>
+<g fill="none" stroke="url(#mint)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M37 90h22v18H37a3 3 0 0 1-3-3V90a3 3 0 0 1 3-3h17"/><path d="M51 96h11v9H51z"/><path d="M55 100h1"/></g>
+<text x="25" y="153" fill="#e9f3f1" font-family="Arial,sans-serif" font-size="24" font-weight="600" letter-spacing="1">RELYNX</text>
+<text x="25" y="176" fill="#8da8af" font-family="Arial,sans-serif" font-size="9" letter-spacing="1.8">YOUR SOL WORKSPACE</text>
+<path d="M25 193h55" stroke="#8cf2cd" stroke-opacity=".5" stroke-width="2" stroke-linecap="round"/>
+</g>
+<g font-family="Arial,sans-serif" filter="url(#shadow)">
+<rect x="420" y="34" width="188" height="74" rx="16" fill="url(#glass)" stroke="#a796da55"/>
+<rect x="434" y="49" width="42" height="42" rx="12" fill="#ac91ff14" stroke="#b6a0f533"/>
+<use href="#sol" x="443" y="58" width="24" height="24" color="#c2a9f8"/>
+<text x="489" y="64" fill="#e6e5f5" font-size="13" font-weight="600">Native SOL</text><text x="489" y="84" fill="#92a1b4" font-size="10">Your network balance</text>
+<rect x="420" y="135" width="188" height="74" rx="16" fill="url(#glass)" stroke="#88dabe55"/>
+<rect x="434" y="150" width="42" height="42" rx="12" fill="#8cf2cd12" stroke="#8cf2cd33"/>
+<g fill="none" stroke="#a7f2d6" stroke-width="1.5" stroke-linejoin="round"><path d="m455 159 12 7-12 7-12-7z"/><path d="m443 172 12 7 12-7m-24 6 12 7 12-7"/></g>
+<text x="489" y="165" fill="#e2f2eb" font-size="13" font-weight="600">SPL assets</text><text x="489" y="185" fill="#92a9ac" font-size="10">Token accounts</text>
+<rect x="420" y="236" width="188" height="74" rx="16" fill="url(#glass)" stroke="#748aab55"/>
+<rect x="434" y="251" width="42" height="42" rx="12" fill="#b3c7f012" stroke="#b3c7f033"/>
+<g fill="none" stroke="#b9cbee" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M445 268h18l-5-5m5 13h-18l5 5"/><path d="M463 268v-1m-18 9v1"/></g>
+<text x="489" y="266" fill="#e3eaf4" font-size="13" font-weight="600">Onchain records</text><text x="489" y="286" fill="#91a3b8" font-size="10">Recent transactions</text>
+</g>
+<g font-family="Arial,sans-serif"><rect x="141" y="286" width="152" height="28" rx="14" fill="#172822" stroke="#8cf2cd30"/><path d="m157 300 3 3 6-7" fill="none" stroke="#9ae7c6" stroke-width="1.5" stroke-linecap="round"/><text x="177" y="304" fill="#a7cbbb" font-size="9" letter-spacing=".5">Your wallet. Your control.</text></g>
+</svg>
